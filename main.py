@@ -52,9 +52,9 @@ def get_omdb_data(api_key):
 def export_to_csv(imdb_id, omdb_data, imdb_rating, rank):
     data = {
         'Rank': rank,
-        'Title': [x['Title'] for x in omdb_data],
-        'Rating': imdb_rating,
         'ID': imdb_id,
+        'Rating': imdb_rating,
+        'Title': [x['Title'] for x in omdb_data],
         'Year': [x['Year'] for x in omdb_data],
         'Rated': [x['Rated'] for x in omdb_data],
         'Released': [x['Released'] for x in omdb_data],
