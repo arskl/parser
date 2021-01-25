@@ -1,4 +1,3 @@
-
 import requests
 from bs4 import BeautifulSoup
 import json
@@ -45,12 +44,11 @@ def get_omdb_data(api_key):
     for id in imdb_id:
         omdb_json = requests.get(link.format(id, api_key))
         omdb_data.append(omdb_json.json())
-        #print (omdb_json.json())
     if len(omdb_data) == 100:
       print ('SUCCESS. OMDB data received.')
 
 #function that creates dataframe that we will export in CSV
-#please see postscript about it on line 111
+#please see postscript about it on line 108
 def export_to_csv(imdb_id, omdb_data, imdb_rating, rank):
     data = {
         'Rank': rank,
@@ -103,7 +101,6 @@ while True:
              get_title()
              get_rank_rating()
              get_omdb_data(api_key)
-             #get_columns_name(omdb_data)
              export_to_csv(imdb_id, omdb_data, imdb_rating, rank)
              break
 f.close()
