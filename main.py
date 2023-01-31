@@ -104,33 +104,3 @@ while True:
              export_to_csv(imdb_id, omdb_data, imdb_rating, rank)
              break
 f.close()
-
-#originally I wanted to get columns name using get_columns_name() from omdb_data and append it to csv_columns:
-
-#csv_columns = ['Rank', 'IMDB ID', 'Rating']
-#def get_columns_name(omdb_data):
-#    for column in omdb_data[0]:
-#        if column in ['imdbID', 'imdbRating']:
-#            continue
-#        else:
-#             csv_columns.append(column)
-
-#after that the code for export_to_csv() should've looked like this
-#def export_to_csv(csv_columns, imdb_id, omdb_data, imdb_rating, rank):
-#    lst = []
-#    for i in csv_columns:
-#      if i == 'Rank':
-#        lst.append(rank)
-#      elif i == 'IMDB ID':
-#        lst.append(imdb_id)
-#      elif i == 'Rating':
-#        lst.append(imdb_rating)
-#      else:
-#        v = [x[i] for x in omdb_data]
-#        lst.append(v)
-#    df = pd.DataFrame(lst, columns=csv_columns)
-#    df.to_csv('100.csv')
-#    print ('SUCCESS. File created.')
-
-#unfortunately I'm not too familiar with Pandas, hence I had to take that shortcut. Sorry that it isn't as sophisticated
-#as I would've hoped it would be. thank you for taking your time to check it out!
